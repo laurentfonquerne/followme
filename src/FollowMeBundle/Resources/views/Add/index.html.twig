@@ -1,0 +1,23 @@
+{% extends "@FollowMeBundle/Resources/views/base.html.twig" %}
+{% block title %}FollowMeBundle:Add:index{% endblock %}
+
+{% block body %}
+
+<h1>{{ "site-add"|trans}}</h1>
+
+{{ form_start(form, {"attr": {"novalidate": "novalidate"} }) }}
+
+{% include "@FollowMeBundle/Resources/views/_form/add_errors.html.twig" %}
+{% include "@FollowMeBundle/Resources/views/_form/add.html.twig" %}
+
+{% if is_granted('ROLE_ADMIN' %}
+you have ROLE_ADMIN
+{% endif %}
+<br />
+<div class="input-form">
+   <button class="btn btn-success">ADD</button>
+</div>
+
+{{ form_end(form) }}
+{% endblock %}
+ 

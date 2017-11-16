@@ -1,0 +1,14 @@
+<div class="col-x-6">
+    <h4>publiez une sortie et proposez aux membres de vous rejoindre</h4>
+
+{% if app.session.get('id')%}
+    <a class="btn btn-info" href="{{ path ('dating')}}">dating</a>
+    <a class="btn btn-info glyphicon glyphicon-plus" href="{{ path ('add')}}"></a>
+{% else %}    
+    <a class="btn btn-success" href="{{ path ('signin')}}">SIGN IN</a>
+    <a class="btn btn-success" href="{{ path ('signup')}}">SIGN UP</a>
+{% endif %}    
+</div>
+<div class="col-x-6">
+    <img class="col-xs-12" src="{{ asset('bundles/followme/images/DSC_0012.jpg')}} " />
+</div>

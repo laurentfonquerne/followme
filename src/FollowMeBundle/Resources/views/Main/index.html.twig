@@ -1,0 +1,8 @@
+{% extends "@FollowMeBundle/Resources/views/base.html.twig" %}
+
+{% block title %}FollowMeBundle:Main:index{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Main:index page</h1>
+{{ render_esi (controller('FollowMeBundle:Main:banner')) }}
+{% endblock %}

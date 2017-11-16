@@ -1,0 +1,12 @@
+{% if page > 1 %}
+<div>
+    <a href="?page={{page - 1 }}">precedent</a>   
+</div>
+
+{% endif %}
+
+{% if results.offsetExists(max - 1) %}
+<div>
+    <a href="?page={{page + 1 }}">suivant</a>
+</div>
+{% endif %}

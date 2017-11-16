@@ -1,0 +1,19 @@
+{% extends "@FollowMeBundle/Resources/views/base.html.twig" %}
+{% block title %}FollowMeBundle:Dating:index{% endblock %}
+
+{% block body %}
+
+<h1>{{ "site-liste"|trans}}</h1>
+
+    {% for date in dating %}
+    <div>
+        {{ date.getDatingTitle}} {{ date.getDatingDescription}}
+    </div>
+    {% endfor %}
+    {% set results = dating %}
+    {% include "@FollowMeBundle/Resources/views/_ui/pages.html.twig" %}
+    
+    
+
+{% endblock %}  
+ 

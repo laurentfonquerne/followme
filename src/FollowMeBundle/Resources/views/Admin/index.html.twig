@@ -1,0 +1,42 @@
+{% extends "@FollowMeBundle/Resources/views/base.html.twig" %}
+{% block title %}FollowMeBundle:Admin:index{% endblock %}
+
+{% block body %}
+
+<h1>{{ "site-liste"|trans}}</h1>
+{% if id %}
+OUIII
+<div class="col-xs-12">
+    <div id="myModal-success" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    vous avez bien supprimé l'utilisateur {{id}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+    {% for user in users %}
+    <div class="col-xs-12">
+        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+        <h3 class="col-xs-8">
+        {{ user.getUserId}} {{ user.getUserMail}}
+        </h3>
+        <div class="col-xs-2">
+            <a class="btn btn-warning glyphicon glyphicon-ban-circle"></a>
+        </div> 
+    {% if is_granted('ROLE_SUPERADMIN') %}
+        <div class="col-xs-2">
+                <a class="btn btn-danger glyphicon glyphicon-remove"
+                href="{{ path('admin_user', { 'id': user.getUserId()}) }}"></a>
+        </div>
+    {% endif %}
+    </div>
+    {% endfor %}
+    {% set results = users %}
+    {% include "@FollowMeBundle/Resources/views/_ui/pages.html.twig" %}
+
+    {% endblock %}  
+ 

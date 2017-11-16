@@ -1,0 +1,20 @@
+{% extends "@FollowMeBundle/Resources/views/base.html.twig" %}
+{% block title %}FollowMeBundle:SignUp:index{% endblock %}
+
+{% block body %}
+
+<h1>{{ "site-sign"|trans}}</h1>
+
+{{ form_start(form, {"attr": {"novalidate": "novalidate"} }) }}
+
+{% include "@FollowMeBundle/Resources/views/_form/sign_errors.html.twig" %}
+{% include "@FollowMeBundle/Resources/views/_form/sign_in.html.twig" %}
+{% include "@FollowMeBundle/Resources/views/_form/confirm.html.twig" %}
+<br />
+<div class="input-form">
+   <button class="btn btn-success">SIGN UP</button>
+</div>
+
+{{ form_end(form) }}
+{% endblock %}
+ 
